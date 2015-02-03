@@ -23,7 +23,7 @@
   <template>
     <style>
       :host {display: inline-block;}
-      #background {min-width: 180px; height: 333px; box-sizing: border-box; margin: auto; background: transparent url(phone.png) no-repeat center center; background-size: contain;}
+      #background {min-width: 180px; height: 333px; box-sizing: border-box; margin: auto; background: transparent none no-repeat center center; background-size: contain;}
       #scroller {overflow: auto;}
     </style>
     <div id="background" layout vertical style="{{bgStyle}}">
@@ -43,7 +43,7 @@
         side: 20,
         bottom: 57
       },
-      bgimg: 'phone.png',
+      bgimg: 'http://gtms03.alicdn.com/tps/i3/TB1z8_ZHXXXXXbrXVXXKptRJVXX-360-665.png',
       innerwidth: 320,
       calcBgStyle: function (innerwidth, bgimg, size) {
         console.log(innerwidth, bgimg, size);
