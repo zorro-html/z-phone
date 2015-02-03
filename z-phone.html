@@ -18,12 +18,12 @@
 
 <link rel="import" href="http://g.tbcdn.cn/mtb/lib-3rd/polymer/polymer.html">
 
-<polymer-element name="z-phone" attributes="innerwidth">
+<polymer-element name="z-phone" attributes="innerwidth, size, bgimg">
 
   <template>
     <style>
-      :host {display: block;}
-      #background {min-width: 180px; height: 333px; box-sizing: border-box; margin: auto; background: transparent url(phone.png) no-repeat center center; background-size: contain;}
+      :host {display: inline-block;}
+      #background {min-width: 180px; height: 333px; box-sizing: border-box; margin: auto; background: transparent none no-repeat center center; background-size: contain;}
       #scroller {overflow: auto;}
     </style>
     <div id="background" layout vertical style="{{bgStyle}}">
@@ -36,28 +36,35 @@
   <script>
 
     Polymer('z-phone', {
-      WIDTH: 360,
-      HEIGHT: 665,
-      TOP: 48,
-      SIDE: 20,
-      BOTTOM: 57,
+      size: {
+        width: 360,
+        height: 665,
+        top: 48,
+        side: 20,
+        bottom: 57
+      },
+      bgimg: 'phone.png',
       innerwidth: 320,
-      calcBgStyle: function (innerwidth) {
+      calcBgStyle: function (innerwidth, bgimg, size) {
+        console.log(innerwidth, bgimg, size);
         var top = 0;
         var bottom = 0;
         var side = 0;
-        var width = this.WIDTH;
-        var height = this.HEIGHT;
-        var scale = innerwidth / (this.WIDTH - this.SIDE * 2);
-        width = this.WIDTH * scale;
-        height = this.HEIGHT * scale;
-        top = this.TOP * scale;
-        bottom = this.BOTTOM * scale;
-        side = this.SIDE * scale;
-        return 'width:' + width + 'px; height:' + height + 'px; padding: ' + top + 'px ' + side + 'px ' + bottom + 'px';
+
+        var width = size.width;
+        var height = size.height;
+        var scale = innerwidth / (size.width - size.side * 2);
+
+        width = size.width * scale;
+        height = size.height * scale;
+        top = size.top * scale;
+        bottom = size.bottom * scale;
+        side = size.side * scale;
+
+        return 'width:' + width + 'px; height:' + height + 'px; padding: ' + top + 'px ' + side + 'px ' + bottom + 'px; background-image: url(' + bgimg + ');';
       },
       computed: {
-        bgStyle: 'calcBgStyle(innerwidth)'
+        bgStyle: 'calcBgStyle(innerwidth, bgimg, size)'
       }
     });
 
