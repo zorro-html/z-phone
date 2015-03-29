@@ -34,40 +34,43 @@
   </template>
 
   <script>
+    (function () {
+      // var currentScript = document._currentScript || document.currentScript;
+      // var urlHelper = UrlHelper(currentScript.baseURI);
 
-    Polymer('z-phone', {
-      size: {
-        width: 360,
-        height: 665,
-        top: 48,
-        side: 20,
-        bottom: 57
-      },
-      bgimg: '//img.alicdn.com/tps/i3/TB1z8_ZHXXXXXbrXVXXKptRJVXX-360-665.png',
-      innerwidth: 320,
-      calcBgStyle: function (innerwidth, bgimg, size) {
-        console.log(innerwidth, bgimg, size);
-        var top = 0;
-        var bottom = 0;
-        var side = 0;
+      Polymer('z-phone', {
+        size: {
+          width: 360,
+          height: 665,
+          top: 48,
+          side: 20,
+          bottom: 57
+        },
+        bgimg: '//img.alicdn.com/tps/i3/TB1z8_ZHXXXXXbrXVXXKptRJVXX-360-665.png',
+        innerwidth: 320,
+        calcBgStyle: function (innerwidth, bgimg, size) {
+          console.log(innerwidth, bgimg, size);
+          var top = 0;
+          var bottom = 0;
+          var side = 0;
 
-        var width = size.width;
-        var height = size.height;
-        var scale = innerwidth / (size.width - size.side * 2);
+          var width = size.width;
+          var height = size.height;
+          var scale = innerwidth / (size.width - size.side * 2);
 
-        width = size.width * scale;
-        height = size.height * scale;
-        top = size.top * scale;
-        bottom = size.bottom * scale;
-        side = size.side * scale;
+          width = size.width * scale;
+          height = size.height * scale;
+          top = size.top * scale;
+          bottom = size.bottom * scale;
+          side = size.side * scale;
 
-        return 'width:' + width + 'px; height:' + height + 'px; padding: ' + top + 'px ' + side + 'px ' + bottom + 'px; background-image: url(' + bgimg + ');';
-      },
-      computed: {
-        bgStyle: 'calcBgStyle(innerwidth, bgimg, size)'
-      }
-    });
-
+          return 'width:' + width + 'px; height:' + height + 'px; padding: ' + top + 'px ' + side + 'px ' + bottom + 'px; background-image: url(' + bgimg + ');';
+        },
+        computed: {
+          bgStyle: 'calcBgStyle(innerwidth, bgimg, size)'
+        }
+      });
+    })();
   </script>
 
 </polymer-element>
