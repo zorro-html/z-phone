@@ -16,7 +16,13 @@
   ```
 -->
 
+<!--
+  iOS：//img.alicdn.com/tps/i3/TB1Wr66HXXXXXaBXXXXlu5hPVXX-373-777.png (374,777,102,102,27)
+  安卓：//img.alicdn.com/tps/i3/TB1z8_ZHXXXXXbrXVXXKptRJVXX-360-665.png (360,665,48,20,57)
+-->
+
 <link rel="import" href="//g.alicdn.com/mtb/lib-3rd/polymer/polymer.html">
+<link rel="import" href="../z-script/ext/link.html">
 
 <polymer-element name="z-phone" attributes="innerwidth, size, bgimg">
 
@@ -35,8 +41,7 @@
 
   <script>
     (function () {
-      // var currentScript = document._currentScript || document.currentScript;
-      // var urlHelper = UrlHelper(currentScript.baseURI);
+      var baseURI = getBaseURI(document);
 
       Polymer('z-phone', {
         size: {
@@ -46,7 +51,7 @@
           side: 20,
           bottom: 57
         },
-        bgimg: '//img.alicdn.com/tps/i3/TB1z8_ZHXXXXXbrXVXXKptRJVXX-360-665.png',
+        bgimg: getFullURL('phone.png', baseURI),
         innerwidth: 320,
         calcBgStyle: function (innerwidth, bgimg, size) {
           console.log(innerwidth, bgimg, size);
