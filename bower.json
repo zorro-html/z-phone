@@ -3,6 +3,6 @@
   "version": "0.0.1",
   "main": "z-phone.html",
   "dependencies": {
-    "z-script": "git@gitlab.alibaba-inc.com:jinjiang.zjj/lib.zorro.script.git"
+    "z-script": "git@gitlab.alibaba-inc.com:jinjiang.zjj/lib-zorro-script.git"
   }
 }
