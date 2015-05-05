@@ -1,8 +1,17 @@
 {
   "name": "z-phone",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "z-phone.html",
+  "ignore": [
+    "test"
+  ],
   "dependencies": {
-    "z-script": "git@gitlab.alibaba-inc.com:jinjiang.zjj/lib-zorro-script.git"
+    "polymer": "~0.5.0",
+    "docs-parser": "Jinjiang/context-free-parser#master",
+    "z-script": "zorro-html/z-script"
+  },
+  "devDependencies": {
+    "docs-maker": "zorro-html/zorro-docs-maker",
+    "web-component-tester": "Polymer/web-component-tester#^1.4.2"
   }
 }

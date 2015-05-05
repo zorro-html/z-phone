@@ -1,27 +1,39 @@
 <!--
-  # phone
 
-  手机壳
+@element z-phone
 
-  ## Attributes
+# `<z-phone>`
 
-  * `innerwidth`: 根据手机内容需要的宽度适配手机壳的大小
+Phone shell element, which could contains content to preview like in a smart phone
 
-  ## Example
+## Attributes
 
-  ```
-  <z-phone>
-    ...
-  </z-phone>
-  ```
+- `innerwidth`: adjust the size the adapt the width of content in the phone cell
+- `size`: JSON data to record `width`, `height`, `top` padding, `bottom` padding and `side` padding of the phone cell
+- `bgimg`: image url of the phone, which is appropriate to the `size`
+
+-->
+
+<!--
+
+@example default
+
+<z-phone innerwidth="240">
+  <div style="background: silver; height: 800px;">Hello World</div>
+</z-phone>
+
+<z-phone size="{'width': 374, 'height': 777, 'top': 102, 'bottom': 102, 'side': 27}" bgimg="iphone.png" innerwidth="240">
+    <div style="background: silver; height: 800px;">Hello World</div>
+</z-phone>
+
 -->
 
 <!--
   iOS：//img.alicdn.com/tps/i3/TB1Wr66HXXXXXaBXXXXlu5hPVXX-373-777.png (374,777,102,102,27)
-  安卓：//img.alicdn.com/tps/i3/TB1z8_ZHXXXXXbrXVXXKptRJVXX-360-665.png (360,665,48,20,57)
+  Android：//img.alicdn.com/tps/i3/TB1z8_ZHXXXXXbrXVXXKptRJVXX-360-665.png (360,665,48,20,57)
 -->
 
-<link rel="import" href="//g.alicdn.com/mtb/lib-3rd/polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../z-script/ext/link.html">
 
 <polymer-element name="z-phone" attributes="innerwidth, size, bgimg">
