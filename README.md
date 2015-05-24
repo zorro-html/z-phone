@@ -2,6 +2,12 @@
 
 Phone shell element, which could contains content to preview like in a smart phone
 
+## Import
+
+```
+<link rel="import" href="z-phone/z-phone.html">
+```
+
 ## Attributes
 
 - `innerwidth`: adjust the size the adapt the width of content in the phone cell
